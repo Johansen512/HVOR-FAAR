@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,500;0,700;1,700&display=swap" rel="stylesheet"
+    <title>HVOR FÅR? Et spil lavet af Johansen for No Sheep in Sight Games</title>
+</head>
+<body onload="togglePlay()">
+    
+        
+    <!--<audio autoplay loop>
+        <source src="/Sound/test1.mp3" type="audio/mpeg">
+            
+          </audio>-->
+        <main>
+            
+        <h1 class="Titel">No Sheep in Sight Games Præsenterer: HVOR FÅR?</h1>
+        <header class="topbox">
+        
+        <p class="scoreValue">SCORE:0 </p>
+        <div class="counter" id="countdown">NO SECONDS REMAINING</div>
+        <button class="startknap" id="startKnap" onclick=reStart()>START SPILLET</button>
+        <audio class="play" id="sound" >
+            <source src="/Sound/test1.mp3" type="audio/mpeg">
+                
+              </audio>
+        
+        <div class="btnWrap" id="btnWrap"><button class="regler" id="pulldown">GAMEPLAY</button>
+
+        <div class="dropcontent" id="dropcontent"><p class="spilregler">REGLER
+            <ul class="liste">
+            <li>Fang så mange får som du kan nå.</li>
+        <li>Fårene skjuler sig bag ... ting ... skjulesteder.</li>
+           <li>Klik på skjulestederne for at afsløre hvad der er bag.</li>  
+            <li>Klik på fårene for at få point ... men skynd dig for tiden løber ud!</li>
+            <li> klik IKKE på ... ikke-fårene ... de gi'r minus point.</li>
+            <li>Du har kun 30 sekunder!</li></ul>
+        </p></div></div>
+
+        </header>
+
+
+        <div class="wrapper">
+            <audio class="playBah" id="soundBah" >
+                <source src="/Sound/sheep.mp3" type="audio/mpeg">
+                    
+                  </audio>
+
+                  <audio class="playFart" id="soundFart" >
+                    <source src="/Sound/fart1.mp3" type="audio/mpeg">
+                        
+                      </audio>
+            
+            <div class="stick" id="stickIn">GAME OVER</div>
+            
+            <div class="cover hide1" id="coverting1">
+        </div>
+            <div class="box item1" id="boxting1"></div>
+
+
+           
+            <div class="cover hide2" id="coverting2"></div>
+            <div class="box item2" id="boxting2"></div>
+
+            
+            
+            <div class="cover hide3" id="coverting3"></div>
+            <div class="box2 item3" id="boxting3"></div>
+            
+            
+            <div class="cover hide4" id="coverting4"></div>
+            <div class="box  item4" id="boxting4"></div>
+
+            
+            <div class="cover hide5" id="coverting5"></div>
+            <div class="box2 item5" id="boxting5"></div>
+
+            <!--<div class="miniwrapper wraps6" id="wrapperting6">-->
+            <div class="cover hide6" id="coverting6"></div>
+            <div class="box item6" id="boxting6"></div>
+
+            <div class="cover2 hide7" id="coverting7"></div>
+            <div class="box item7" id="boxting7"></div>
+
+            <div class="cover2 hide8" id="coverting8"></div>
+            <div class="box2 item8" id="boxting8"></div>
+
+            <div class="cover2 hide9" id="coverting9"></div>
+            <div class="box item9" id="boxting9"></div>
+
+            <div class="cover3 hide10" id="coverting10"></div>
+            <div class="box item10" id="boxting10"></div>
+
+            <div class="cover3 hide11" id="coverting11"></div>
+            <div class="box2 item11" id="boxting11"></div>
+
+            <div class="cover3 hide12" id="coverting12"></div>
+            <div class="box item12" id="boxting12"></div>
+
+            
+        </div>
+
+        <footer class="foot">©Johansen2020</footer>
+    </main>
+
+   
+    
+    <script src="javascript.js"></script>
+</body>
+</html>

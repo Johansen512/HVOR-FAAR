@@ -82,10 +82,28 @@ cursor: pointer;
       align-self: center;
       text-align: center;
       position: absolute;
-      font-size: 17em;
+      font-size: 8em;
       font-weight: bolder;
       z-index: 100;
   }
+
+  .stick2{
+    display: none;
+    grid-column: 1/48;
+    grid-row: 1/24;
+    font-family: 'Cabin', sans-serif;
+
+    background-color:rgb(3, 75, 158);
+    background: fixed; 
+    flex-direction: row;
+      justify-content: center;
+    align-self: center;
+    text-align: center;
+    position: absolute;
+    font-size: 8em;
+    font-weight: bolder;
+    z-index: 100;
+}
 
   .topbox{
       display: flex;

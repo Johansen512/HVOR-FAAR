@@ -28,8 +28,10 @@ const frontelement11 = document.querySelector('.hide11');
 const frontelement12 = document.querySelector('.hide12');
 
 let score = 0;
+let levelScore = 0;
 let scoreValue = document.querySelector (".scoreValue");
-
+let NumbSheep = 8 //Number of Sheep on level
+//Herunder starter LYD
 var sheepSound = document.getElementById("soundBah");
 var fartSound = document.getElementById ("soundFart");
 
@@ -57,13 +59,13 @@ myAudio.onplaying = function() {
 myAudio.onpause = function() {
   isPlaying = false;
 };
+//Her slutter LYD
 
 
 
 
 
-
-//Mouseover starts here
+//Mouseclick starts here
 
 document.body.addEventListener("click", event => {
   if (event.target !== frontelement1 && event.target !== frontelement2 && event.target !== frontelement3 && event.target !== frontelement4 && event.target !== frontelement5 && event.target !== frontelement6 && event.target !== frontelement7 && event.target !== frontelement8 && event.target !== frontelement9 && event.target !== frontelement10 && event.target !== frontelement11 && event.target !== frontelement12
@@ -77,10 +79,7 @@ document.body.addEventListener("click", event => {
   }
 
   event.target.style.display = "none";
-  /*event.target.style.width = "20px";
-  event.target.style.height = "20px";
-  event.target.style.opacity = "20%";
-  //*event.target.style.backgroundColor = "blue";*/
+ 
 
  
  
@@ -93,7 +92,7 @@ document.body.addEventListener("click", event => {
 
 //
 //
-//clicks starts here 
+//More clicks starts here 
 document.body.addEventListener("click", event => {
   if (event.target !== element1 && event.target !== element2 && event.target !== element3 && event.target !== element4 && event.target !== element5 && event.target !== element6 && event.target !== element7 && event.target !== element8 && event.target !== element9 && event.target !== element10 && event.target !== element11 && event.target !== element12
     
@@ -110,9 +109,10 @@ document.body.addEventListener("click", event => {
     toggleFart()
     event.target.style.display = "none";
     
-  score--;
+  score -=5;
+  //levelScore -=5;
   scoreValue.innerHTML = "SCORE: &nbsp &nbsp &nbsp" + score;
-  console.log (score)
+  console.log (levelScore)
   return
   }
 
@@ -120,38 +120,39 @@ document.body.addEventListener("click", event => {
   toggleBah();
   //event.target.style.display = "none";
   event.target.style.display = "none";
-  score++;
+  score += 5;
+  //levelScore += 5;
+  NumbSheep -= 1;
+  console.log (NumbSheep);
+
   
   
 
   
   //setTimeout(fire(),50000 );
   scoreValue.innerHTML = "SCORE:" + score;
-  console.log (score)}
+  }
+
+  //END OF LEVEL SCREEN STARTS HERE
+
+if (NumbSheep < 1) {
+clearInterval(downloadTimer);
+document.getElementById("stickIn").style.display = "none";
+document.getElementById("stickIn2").style.display = "block";
+let levelScore = score + timeleft + 1;
+document.getElementById("stickIn2").innerHTML = "Du klarede banen og scorede &nbsp" + levelScore + "&nbsp point";
+togglePlay();
+
+console.log (levelScore);
+scoreValue.innerHTML = "SCORE:" + levelScore;
+}
+
   
 });
 
 
 
-/*document.body.addEventListener("mouseout", event => {
-   if (event.target !== frontelement1 && event.target !== frontelement2 && event.target !== frontelement3 && event.target !== frontelement4 && event.target !== frontelement5 && event.target !== frontelement6 && event.target !== frontelement7 && event.target !== frontelement8 && event.target !== frontelement9
-    
-    
-    
-    ) {
 
-      
-    console.log ("Nononononononononoo!");
-    return
- /* }
-  event.target.style.width = "150px";
-  event.target.style.height = "225px";
-  event.target.style.opacity = "100%";
-
- 
-  
- /* }*/
-/*)*/
 
 
 
@@ -162,6 +163,7 @@ let downloadTimer = setInterval(function(){
     clearInterval(downloadTimer);
     document.getElementById("countdown").innerHTML = "";
     document.getElementById("stickIn").style.display = "block";
+    document.getElementById("stickIn").innerHTML = "GAME OVER! Du scorede &nbsp" + score + "&nbsp point";
     togglePlay();
     
     
@@ -175,6 +177,8 @@ let downloadTimer = setInterval(function(){
   }
   timeleft -= 1;
 }, 1000);
+
+
 
 
 function reStart () {
